@@ -1,0 +1,70 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <h1 class="title">レシピ内容</h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image">
+              <%= attachment_image_tag @recipe, :image %>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <div class="title is-size-5">
+                  <%= @recipe.recipe_title %>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <table class="table">
+                <tr>
+                  <th>レシピ内容</th>
+                </tr>
+                <tr>
+                  <td>
+                    <%= simple_format @recipe.recipe_detail %>
+                  </td>
+                </tr>
+              </table>
+              
+              <div class="parent">
+                <time class="ml-2">
+                  <%= @recipe.updated_at.strftime("%Y-%m-%d %H:%M") %>
+                  <span>更新</span>
+                </time>
+                <div class="right is-size-5 mr-1">
+                  <% if current_user.likes_already_exits?(@recipe) %>
+                    <%= link_to recipe_likes_path(@recipe), method: :delete do %>
+                      <i class="fas fa-heart"></i>
+                    <% end %>
+                    <%= @recipe.likes.count %>
+                  <% else %>
+                    <%= link_to recipe_likes_path(@recipe), method: :post do %>
+                      <i class="far fa-heart"></i>
+                    <% end %>
+                    <%= @recipe.likes.count %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="has-text-right mt-5 mr-1">
+                <% if @recipe.user.id == current_user.id %>
+                  <%= link_to "編集", edit_recipe_path(@recipe), class: "button is-link is-outlined" %>
+                  <%= link_to '削除', recipe_path(@recipe), method: :delete, data: {confirm: "本当にレシピを削除しますか？"}, class: "button is-link is-outlined ml-4" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

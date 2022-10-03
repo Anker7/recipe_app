@@ -1,0 +1,79 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <h1 class="title">登録内容の編集 <%= resource_name.to_s.humanize %></h1>
+    </div>
+    </br>
+    <div class="columns is-centered has-text-centered">
+      <p>以下の任意の項目にご記入の上、「更新」ボタンを押してください。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="box">
+            <div class="field">
+              <%= f.label :email, "メールアドレス", class: "label" %>
+              <p class="control has-icons-left">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-link" %>
+                <span class="icon is-small is-left"> 
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </p>
+            </div>
+          
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+          
+            <div class="field">
+              <%= f.label :password, "新しいパスワード", class: "label" %> 
+              <p class="control has-icons-left">
+                <%= f.password_field :password, autocomplete: "new-password", class: "input is-link" %>
+                <span class="icon is-small is-left"> 
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
+              <i>※パスワードを変更しない場合は、空白のままにしてください。</i>
+              <% if @minimum_password_length %>
+                <em>※変更する場合は、６文字以上入力してください。</em>
+              <% end %>
+            </div>
+          
+            <div class="field">
+              <%= f.label :password_confirmation, "新しいパスワード（確認）", class: "label" %>
+              <p class="control has-icons-left">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input is-link" %>
+                <span class="icon is-small is-left">
+                 <i class="fas fa-lock"></i>
+                </span>
+              </p>
+            </div>
+          
+            <div class="field">
+              <%= f.label :current_password, "元のパスワード", class: "label" %> 
+              <p class="control has-icons-left">
+                <%= f.password_field :current_password, autocomplete: "current-password", class: "input is-link" %>
+                <span class="icon is-small is-left">
+                 <i class="fas fa-lock"></i>
+                </span>
+              </p>
+              <i>※新しいパスワードに変更する場合は、ご記入ください。</i>
+            </div>
+          
+            <div class="actions">
+              <div class="has-text-centered">
+                <%= f.submit "更新", class: "button is-link pl-6 pr-6" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        
+        <h2>アカウントの削除</h2>
+        <p>Unhappy? <%= button_to "削除", registration_path(resource_name), data: { confirm: "本当にアカウントを削除しますか？" }, method: :delete %></p>
+        <%= link_to "戻る", :back %>

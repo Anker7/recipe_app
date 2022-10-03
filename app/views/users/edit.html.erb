@@ -1,0 +1,72 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <h1 class="title">ユーザー編集</h1>
+    </div>
+    </br>
+    <div class="columns is-centered has-text-centered">
+      <p>以下の任意の項目にご記入の上、「更新」ボタンを押してください。</p>
+    </div>
+  </div>
+</section>
+
+<% if @user.errors.any? %>
+  <div class="notification is-danger has-text-centered">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <%= form_for @user do |f| %>
+          <div class="box">
+            <div class="field">
+              <%= f.label :username, "ユーザー名", class: "label" %>
+              <p class="control has-icons-left">
+                <%= f.text_field :username, class: "input is-link" %>
+                <span class="icon is-small is-left"> 
+                  <i class="fas fa-user"></i>
+                </span>
+              </p>
+            </div>
+            
+            <div class="field">
+              <%= f.label :email, "メールアドレス", class: "label" %>
+              <p class="control has-icons-left">
+                <%= f.email_field :email, class: "input is-link" %>
+                <span class="icon is-small is-left"> 
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </p>
+            </div>
+            
+            <div class="field">
+              <%= f.label :profile, "プロフィール", class: "label" %>
+              <p class="control">
+                <%= f.text_area :profile, class: "textarea is-link" %>
+              </p>
+            </div>
+            
+            <div class="field">
+              <%= f.label :profile_image, "プロフィール画像", class: "label" %>
+              <p class="control">
+                <%= f.file_field :profile_image %>
+              </p>
+            </div>
+            
+            <div class="has-text-centered">
+              <%= f.submit "更新", class: "button is-link pl-6 pr-6" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </container>
+</section>

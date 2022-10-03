@@ -1,0 +1,24 @@
+ @import "bulma";
+  
+ .section + .section {
+   margin-top: -50px;
+ }
+ 
+ .required::after {
+    content: "必須";
+    background-color: #ff3860;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 10px;
+    padding: 4px 7px;
+    margin: 0px 5px 4px;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 10px;
+    display: inline-block;
+ }
+ 
+ 

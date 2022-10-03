@@ -1,0 +1,56 @@
+<% if @recipe.errors.any? %>
+  <div class="notification is-danger has-text-centered">
+    <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @recipe.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <h1 class="title">レシピ作成</h1>
+    </div>
+    </br>
+    <div class="columns is-centered has-text-centered">
+      <p>以下の任意の項目にご記入の上、「投稿」ボタンを押してください。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <%= form_for @recipe do |f| %>
+          <div class="box">
+            <div class="field">
+              <%= f.label :recipe_title, "レシピ名", class: "label required" %>
+              <p class="control">
+                <%= f.text_field :recipe_title, class: "input is-link" %>
+              </p>
+            </div>
+            <div class="field">
+              <%= f.label :recipe_detail, "レシピ内容", class: "label required" %>
+              <p class="control">
+                <%= f.text_area :recipe_detail, class: "textarea is-link" %>
+              </p>
+            </div>
+            <div class="field">
+              <%= f.label :image, "レシピ画像", class: "label required" %>
+              <p class="control">
+                <%= f.file_field :image %>
+              </p>
+            </div>
+            <div class="has-text-centered">
+              <%= f.submit '投稿', class: "button is-link pl-6 pr-6" %>
+            </div>
+          </box>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
