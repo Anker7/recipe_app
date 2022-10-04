@@ -16,6 +16,16 @@
  
  @import "bulma";
  
+ @mixin img-size($value) {
+   max-width: 640px;
+   height: $value;
+   & img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+ }
+ 
  .home-contents {
    margin-top: 10%;
  }
@@ -36,14 +46,27 @@
    background-color: #CBFFD3;
  }
  
- .recipe-pic {
-   max-width: 640px;
-   height: auto;
-   background-repeat: no-repeat;
-   background-size: cover;
- }
- 
  .parent {
    display: flex;
    justify-content: space-between;
  }
+ 
+ .img-container {
+   &-user {
+     &-index {
+      @include img-size(240px);
+     }
+     &-show {
+       @include img-size(190px);
+     }
+   }
+   &-recipe {
+     &-index {
+       @include img-size(200px);
+     }
+     &-show {
+       @include img-size(250px);
+     }
+   }
+ }
+ 
