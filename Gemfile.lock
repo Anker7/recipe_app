@@ -348,6 +348,7 @@ DEPENDENCIES
   refile-mini_magick
   refile-s3
   selenium-webdriver
+  sinatra
   sprockets-rails
   sqlite3
   stimulus-rails

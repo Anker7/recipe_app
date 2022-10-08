@@ -22,7 +22,7 @@
             <h1 class="title is-4 ml-3" style="font-family: cursive">RECIPEAPP</h1>
           <% end %>
           
-          <div role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" @click="isOpen = !isOpen" v-bind:class="{'is-active': isOpen}">
+          <div role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -30,7 +30,7 @@
         </div>
         
         <% if user_signed_in? %>
-          <div id="navbarBasicExample" class="navbar-menu" v-bind:class="{'is-active': isOpen}">
+          <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-item">
               <%= link_to "レシピ一覧", recipes_path, class: "button is-ghost has-text-black" %>
             </div>
@@ -51,7 +51,7 @@
             </div>
           </div>
         <% else %>
-          <div id="navbarBasicExample" class="navbar-menu" v-bind:class="{'is-active': isOpen}">
+          <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-end ">
               <div class="navbar-item">
                 <%= link_to "投稿者一覧", users_path, class: "button is-ghost has-text-black" %>
@@ -91,16 +91,6 @@
         </div>
       </div>
     <% end %>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
-    <script>
-      const app = new Vue ({
-        el: '#app',
-        data: {
-          isOpen: false
-        }
-      });
-    </script>
     
     <%= yield %>
   </body>
