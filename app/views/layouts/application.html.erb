@@ -9,19 +9,18 @@
     <%= favicon_link_tag('cookbook_icon.png') %>
     <script src="https://kit.fontawesome.com/f1434e723f.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav class="navbar has-background-color" role="navigation" aria-label="main navigation">
+    <nav id="app" class="navbar has-background-color" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item ml-2" do %>
           <%= image_tag "cookbook_icon.png" %>
           <h1 class="title is-4 ml-3" style="font-family: cursive">RECIPEAPP</h1>
         <% end %>
         
-        <div role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <div role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" @click="isOpen = !isOpen" v-bind:class="{'is-active': isOpen}">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -29,7 +28,7 @@
       </div>
       
       <% if user_signed_in? %>
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu" v-bind:class="{'is-active': isOpen}">
           <div class="navbar-item">
             <%= link_to "レシピ一覧", recipes_path, class: "button is-ghost has-text-black" %>
           </div>
@@ -50,7 +49,7 @@
           </div>
         </div>
       <% else %>
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu" v-bind:class="{'is-active': isOpen}">
           <div class="navbar-end ">
             <div class="navbar-item">
               <%= link_to "投稿者一覧", users_path, class: "button is-ghost has-text-black" %>
@@ -90,8 +89,18 @@
       </div>
     <% end %>
     
-    <%= yield %>
-    <script></script>
+    <%= yield %> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <script type="module">
+    window.addEventListener('load',function(){
+      var app = new Vue({
+        el: '#app',
+        data: {
+            isOpen: false
+        }
+      });
+    });senni
+    </script>
   </body>
   
   <footer class="footer">

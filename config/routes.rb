@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'home#index' 
+  root to: 'home#index' 
   resources :users
   resources :recipes do
     resource :likes, only: [:create, :destroy]

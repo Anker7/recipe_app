@@ -85,7 +85,7 @@ gem "refile-mini_magick" #image_submit
 gem "bulma-rails" #sass useable and css design
 gem 'jquery-rails'
 
-gem "refile-s3"
+gem "refile-s3" #AWS S3
 gem 'carrierwave'
 gem 'fog-aws'
 gem "webrick", "~> 1.7"
