@@ -89,6 +89,6 @@ gem "refile-s3"
 gem 'carrierwave'
 gem 'fog-aws'
 gem "webrick", "~> 1.7"
-gem 'dotenv-rails'
+gem 'dotenv-rails' #password not release
 gem 'aws-sdk', '~> 2.0'
 gem "sinatra"
