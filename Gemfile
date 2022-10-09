@@ -84,6 +84,7 @@ gem "refile", require: "refile/rails", github: 'manfe/refile' #image_submit
 gem "refile-mini_magick" #image_submit
 gem "bulma-rails" #sass useable and css design
 gem 'jquery-rails'
+
 gem "refile-s3"
 gem 'carrierwave'
 gem 'fog-aws'
