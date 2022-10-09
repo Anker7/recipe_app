@@ -1,5 +1,4 @@
 require "refile/s3"
-require 'refile/simple_form'
 
 if Rails.env.production?
   aws = {
