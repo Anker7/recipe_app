@@ -90,5 +90,5 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem "webrick", "~> 1.7"
 gem 'dotenv-rails'
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk', '~> 2.0'
 gem "sinatra"

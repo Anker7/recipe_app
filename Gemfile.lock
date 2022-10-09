@@ -329,7 +329,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  aws-sdk (~> 2)
+  aws-sdk (~> 2.0)
   bootsnap
   bulma-rails
   capybara
