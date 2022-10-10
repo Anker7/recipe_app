@@ -94,3 +94,5 @@ gem 'dotenv-rails' #password not release
 gem 'aws-sdk', '~> 2.0'
 gem "sinatra"
 gem "net-smtp"
+gem 'net-pop'
+gem 'net-imap'
