@@ -91,3 +91,5 @@ gem 'dotenv-rails' #password not release
 gem "net-smtp"
 gem 'net-pop'
 gem 'net-imap'
+
+gem "webrick", "~> 1.7"
