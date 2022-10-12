@@ -12,13 +12,13 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 # 開発・テスト環境ではSQLite3を使う
 group :development, :test do
-  gem 'sqlite3'
+  gem "sqlite3"
 end
 
 # 本番環境ではPostgresqlを使う
 group :production do
-  gem 'pg', '1.4.3'
-  gem 'fog-aws'
+  gem "pg", "1.4.3"
+  gem "fog-aws"
 end
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -28,7 +28,7 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+#gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -65,7 +65,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem 'listen'
+  gem "listen"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
