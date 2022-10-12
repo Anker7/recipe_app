@@ -84,15 +84,10 @@ gem 'devise' #login or logout
 gem "refile", require: "refile/rails", github: 'manfe/refile' #image_submit
 gem "refile-mini_magick" #image_submit
 gem "bulma-rails" #sass useable and css design
-gem 'jquery-rails'
+gem 'jquery-rails' #jquery
 
-gem "refile-s3" #AWS S3
-gem 'carrierwave'
-gem 'fog-aws'
-gem "webrick", "~> 1.7"
+gem "refile-s3" #AWS S3 refile upload
 gem 'dotenv-rails' #password not release
-gem 'aws-sdk', '~> 2.0'
-gem "sinatra"
 gem "net-smtp"
 gem 'net-pop'
 gem 'net-imap'
