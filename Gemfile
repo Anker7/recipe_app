@@ -18,6 +18,7 @@ end
 # 本番環境ではPostgresqlを使う
 group :production do
   gem 'pg', '1.4.3'
+  gem 'fog-aws'
 end
 
 # Use the Puma web server [https://github.com/puma/puma]
