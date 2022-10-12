@@ -19,6 +19,7 @@ end
 group :production do
   gem "pg", "1.4.3"
   gem "fog-aws"
+  gem "aws-sdk", "~> 2.0"
 end
 
 # Use the Puma web server [https://github.com/puma/puma]
