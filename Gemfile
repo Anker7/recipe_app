@@ -95,3 +95,4 @@ gem 'net-pop'
 gem 'net-imap'
 
 gem "webrick", "~> 1.7"
+gem "mini_magick"
