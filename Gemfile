@@ -19,6 +19,7 @@ end
 group :production do
   gem "pg", "1.4.3"
   gem "fog-aws"
+  gem "aws-sdk-s3", "1.114.0", require: false
 end
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -94,5 +95,3 @@ gem 'net-pop'
 gem 'net-imap'
 
 gem "webrick", "~> 1.7"
-
-gem "aws-sdk-s3"
