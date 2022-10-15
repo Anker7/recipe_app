@@ -303,7 +303,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  aws-sdk (~> 2.0)
   bootsnap
   bulma-rails
   capybara
@@ -315,18 +314,17 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   listen
-  mini_magick
   net-imap
   net-pop
   net-smtp
   pg (= 1.4.3)
   puma (~> 5.0)
-  rails (~> 6.1.4)
+  rails (~> 6.1.7)
   refile!
   refile-mini_magick
   refile-s3
   selenium-webdriver
-  sprockets-rails
+  sprockets-rails (= 3.4.2)
   sqlite3
   stimulus-rails
   tzinfo-data

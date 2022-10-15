@@ -4,10 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 6.1.4"
+gem "rails", "~> 6.1.7"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+gem "sprockets-rails", "3.4.2"
 
 # Use sqlite3 as the database for Active Record
 # 開発・テスト環境ではSQLite3を使う
@@ -19,7 +19,6 @@ end
 group :production do
   gem "pg", "1.4.3"
   gem "fog-aws"
-  gem "aws-sdk", "~> 2.0"
 end
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -82,17 +81,16 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'devise' #login or logout
+gem "devise" #login or logout
 gem "refile", require: "refile/rails", github: 'manfe/refile' #image_submit
 gem "refile-mini_magick" #image_submit
 gem "bulma-rails" #sass useable and css design
-gem 'jquery-rails' #jquery
+gem "jquery-rails" #jquery
 
 gem "refile-s3" #AWS S3 refile upload
-gem 'dotenv-rails' #password not release
+gem "dotenv-rails" #password not release
 gem "net-smtp"
 gem 'net-pop'
 gem 'net-imap'
 
 gem "webrick", "~> 1.7"
-gem "mini_magick"
