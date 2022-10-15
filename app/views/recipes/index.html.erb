@@ -34,12 +34,12 @@
                       <%= link_to recipe.user.username, user_path(recipe.user), class: "title is-4 has-text-link" %>
                       <span class="pl-5 is-size-5">
                         <% if current_user.likes_already_exits?(recipe) %>
-                          <%= link_to recipe_likes_path(recipe), method: :delete do %>
+                          <%= link_to recipe_likes_path(recipe), :method => :delete do %>
                             <i class="fas fa-heart"></i>
                           <% end %>
                           <%= recipe.likes.count %>
                         <% else %>
-                          <%= link_to recipe_likes_path(recipe), method: :post do %>
+                          <%= link_to recipe_likes_path(recipe), :method => :post do %>
                             <i class="far fa-heart"></i>
                           <% end %>
                           <%= recipe.likes.count %>

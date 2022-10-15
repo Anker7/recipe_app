@@ -43,12 +43,12 @@
                 </time>
                 <div class="right is-size-5 mr-1">
                   <% if current_user.likes_already_exits?(@recipe) %>
-                    <%= link_to recipe_likes_path(@recipe), method: :delete do %>
+                    <%= link_to recipe_likes_path(@recipe), :method => :delete do %>
                       <i class="fas fa-heart"></i>
                     <% end %>
                     <%= @recipe.likes.count %>
                   <% else %>
-                    <%= link_to recipe_likes_path(@recipe), method: :post do %>
+                    <%= link_to recipe_likes_path(@recipe), :method => :post do %>
                       <i class="far fa-heart"></i>
                     <% end %>
                     <%= @recipe.likes.count %>
@@ -58,7 +58,7 @@
               <div class="has-text-right mt-5 mr-1">
                 <% if @recipe.user.id == current_user.id %>
                   <%= link_to "編集", edit_recipe_path(@recipe), class: "button is-link is-outlined" %>
-                  <%= link_to '削除', recipe_path(@recipe), method: :delete, data: {confirm: "本当にレシピを削除しますか？"}, class: "button is-link is-outlined ml-4" %>
+                  <%= link_to '削除', recipe_path(@recipe), :method => :delete, data: {confirm: "本当にレシピを削除しますか？"}, class: "button is-link is-outlined ml-4" %>
                 <% end %>
               </div>
             </div>
