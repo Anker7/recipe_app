@@ -87,10 +87,12 @@ gem "refile-mini_magick" #image_submit
 gem "bulma-rails" #sass useable and css design
 gem "jquery-rails" #jquery
 
-gem "refile-s3" #AWS S3 refile upload
+#gem "refile-s3" #AWS S3 refile upload
 gem "dotenv-rails" #password not release
 gem "net-smtp"
 gem 'net-pop'
 gem 'net-imap'
 
 gem "webrick", "~> 1.7"
+
+gem "aws-sdk-s3"
