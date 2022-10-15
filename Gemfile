@@ -18,8 +18,6 @@ end
 # 本番環境ではPostgresqlを使う
 group :production do
   gem "pg", "1.4.3"
-  gem "fog-aws"
-  gem "aws-sdk-s3", require: false
 end
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -56,11 +54,13 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
@@ -95,3 +95,6 @@ gem 'net-pop'
 gem 'net-imap'
 
 gem "webrick", "~> 1.7"
+
+gem "fog-aws"
+gem "aws-sdk-s3", require: false
