@@ -19,6 +19,7 @@ end
 group :production do
   gem "pg", "1.4.3"
   gem "fog-aws"
+  gem "aws-sdk-s3", require: false
 end
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -87,7 +88,7 @@ gem "refile-mini_magick" #image_submit
 gem "bulma-rails" #sass useable and css design
 gem "jquery-rails" #jquery
 
-gem "refile-s3" #AWS S3 refile upload
+#gem "refile-s3" #AWS S3 refile upload
 gem "dotenv-rails" #password not release
 gem "net-smtp"
 gem 'net-pop'
