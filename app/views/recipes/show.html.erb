@@ -55,7 +55,7 @@
                   <% end %>
                 </div>
               </div>
-              <div class="has-text-right mt-5 mr-2">
+              <div class="has-text-right mt-5 mr-1">
                 <% if @recipe.user.id == current_user.id %>
                   <%= link_to "編集", edit_recipe_path(@recipe), class: "button is-link is-outlined" %>
                   <%= link_to '削除', recipe_path(@recipe), :method => :delete, data: {confirm: "本当にレシピを削除しますか？"}, class: "button is-link is-outlined ml-4" %>
