@@ -18,6 +18,7 @@ end
 # 本番環境ではPostgresqlを使う
 group :production do
   gem "pg", "1.4.3"
+  gem 'rails_12factor'
 end
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -98,3 +99,6 @@ gem "webrick", "~> 1.7"
 
 gem "fog-aws"
 gem "aws-sdk-s3", require: false
+
+gem 'carrierwave'
+gem 'mini_magick'
