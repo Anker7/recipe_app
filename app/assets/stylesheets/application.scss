@@ -70,3 +70,18 @@
    }
  }
  
+ .link-style {
+   border: none;
+   background: none;
+   color: #000;
+   cursor: pointer;
+   font-size: 20px;
+   &-pink {
+     border-color: #000;
+     color: #ff99ff;
+   }
+ }
+ 
+ .black {
+   color: #000;
+ }

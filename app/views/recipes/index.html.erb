@@ -30,21 +30,22 @@
                 </figure>
                 <div class="media-content">
                   <div class="content">
-                    <div class="pt-3">
+                    <div class="pt-2 parent">
                       <%= link_to recipe.user.username, user_path(recipe.user), class: "title is-4 has-text-link" %>
-                      <span class="pl-5 is-size-5">
+                      <div class="is-size-5">
                         <% if current_user.likes_already_exits?(recipe) %>
-                          <%= link_to recipe_likes_path(recipe), :method => :delete do %>
+                          <%= button_to recipe_likes_path(recipe), :method => :delete, class: "link-style link-style-pink" do %>
                             <i class="fas fa-heart"></i>
+                            <span class="black"><%= recipe.likes.count %></span>
                           <% end %>
-                          <%= recipe.likes.count %>
+                         
                         <% else %>
-                          <%= link_to recipe_likes_path(recipe), :method => :post do %>
+                          <%= button_to recipe_likes_path(recipe), :method => :post, class: "link-style" do %>
                             <i class="far fa-heart"></i>
+                            <%= recipe.likes.count %>
                           <% end %>
-                          <%= recipe.likes.count %>
                         <% end %>
-                      </span>
+                      </div>
                     </div>
                   </div>
                 </div>
