@@ -20,9 +20,8 @@
                   <% end %>
                 </figure>
               </div>
-            </div>
-            <div class="card-content">
-              <div class="media">
+  
+              <div class="media mt-5">
                 <figure class="media-left">
                   <div class="image is-48x48">
                     <%= attachment_image_tag recipe.user, :profile_image, fallback: "image1.png", class: "is-rounded" %>
@@ -50,7 +49,7 @@
                   </div>
                 </div>
               </div>
-              <div class="content ml-1">
+              <div class="content ml-1 .is-marginless">
                 <time>
                   <%= recipe.updated_at.strftime("%Y-%m-%d %H:%M") %>
                   <span>更新</span>

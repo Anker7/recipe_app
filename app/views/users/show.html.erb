@@ -26,14 +26,11 @@
                 <%= @user.profile %>
               </div>
             </div>
-                
             <% if @user.id == current_user.id %>
               <div class="is-size-5 mt-5">
                 <%= link_to "編集", edit_user_path(@user), class: "button is-link is-outlined mr-2 ml-2" %>
               </div>
             <% end %>
-      
-            </div>
           </div>
         </div>
       </div>
@@ -70,7 +67,7 @@
                       </span>
                       このレシピを編集する
                     <% end %>
-                    <%= link_to recipe_path(recipe), method: :delete, data: {confirm: "本当にレシピを削除しますか？"}, class: "panel-block" do %>
+                    <%= button_to recipe_path(recipe), :method => :delete, data: {confirm: "本当にレシピを削除しますか？"}, class: "panel-block link-style-delete" do %>
                       <span class="panel-icon">
                         <i class="fas fa-trash"></i>
                       </span>
