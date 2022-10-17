@@ -13,7 +13,7 @@
         <div class="card">
           <div class="card-image">
             <figure class="image img-container-recipe-show">
-              <%= attachment_image_tag @recipe, :image %>
+              <%= image_tag @recipe.image_id.to_s %>
             </figure>
           </div>
           <div class="card-content">

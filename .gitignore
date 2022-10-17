@@ -36,3 +36,6 @@
 
 #secret key S3
 /.env
+
+#secret image
+/public/uploads

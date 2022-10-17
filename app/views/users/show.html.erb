@@ -14,7 +14,7 @@
           <div class="columns is-centered">
             <div class="column is-9">
               <figure class="image is-64x64">
-                <%= attachment_image_tag @user, :profile_image, fallback: "image1.png", class: "is-rounded" %>
+                <%= image_tag @user.profile_image_id.to_s, class: "is-rounded" %>
               </figure>
               <div class="ml-1 mt-3 is-size-5">
                 <strong class="mr-2"><%= @user.username %></strong>
@@ -47,7 +47,7 @@
             <div class="card-image">
               <figure class="image  img-container-user-show">
                 <%= link_to recipe_path(recipe) do %>
-                  <%= attachment_image_tag recipe, :image, fallback: "no-image.png" %>
+                  <%= image_tag recipe.image_id.to_s, fallback: "no-image.png" %>
                 <% end %>
               </figure>
             </div>
