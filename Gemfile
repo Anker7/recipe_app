@@ -84,8 +84,8 @@ group :test do
 end
 
 gem "devise" #login or logout
-#gem "refile", require: "refile/rails", github: 'manfe/refile' #image_submit
-#gem "refile-mini_magick" #image_submit
+gem "refile", require: "refile/rails", github: 'manfe/refile' #image_submit
+gem "refile-mini_magick" #image_submit
 gem "bulma-rails" #sass useable and css design
 gem "jquery-rails" #jquery
 
